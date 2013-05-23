@@ -1,14 +1,11 @@
-filetype plugin on
+filetype indent plugin on
 set grepprg=grep\ -nH\ $*
-filetype indent on
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
 endif
 
 set nocompatible	" Use Vim defaults (much better!)
 set bs=2		" allow backspacing over everything in insert mode
-"set ai			" always set autoindenting on
-"set backup		" keep a backup file
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 			" than 50 lines of registers
 set history=50		" keep 50 lines of command line history
@@ -56,6 +53,8 @@ endif
 set nu
 set sw=4
 set softtabstop=4
+set smarttab
+set tabstop=8
 set expandtab
 set tags=./tags,../tags,../../tags,../../../tags
 set ruler
@@ -70,7 +69,21 @@ endif
 set wildmenu
 set visualbell
 set ignorecase
-
+set smartcase
 " for omnicppcomplete
 let OmniCpp_NamespaceSearch = 2
 let OmniCpp_MayCompleteScope = 1
+
+let g:SuperTabDefaultCompletionType = "context"
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
