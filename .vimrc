@@ -70,6 +70,7 @@ set wildmenu
 set visualbell
 set ignorecase
 set smartcase
+set t_Co=256
 " for omnicppcomplete
 let OmniCpp_NamespaceSearch = 2
 let OmniCpp_MayCompleteScope = 1
