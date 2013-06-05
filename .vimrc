@@ -45,7 +45,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 if &term=="xterm"
-     set t_Co=8
+     set t_Co=256
      set t_Sb=[4%dm
      set t_Sf=[3%dm
 endif
