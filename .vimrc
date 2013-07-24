@@ -100,3 +100,5 @@ autocmd BufReadPost *
             \   exe "normal! g`\"" |
             \ endif
 
+" Treat *.vg as Verilog
+au BufRead,BufNewFile *.vg setfiletype verilog
