@@ -56,7 +56,7 @@ set softtabstop=4
 set smarttab
 set tabstop=8
 set expandtab
-set tags=./tags,../tags,../../tags,../../../tags
+set tags+=./tags,../tags,../../tags,../../../tags
 set ruler
 set showcmd
 set incsearch
