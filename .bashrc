@@ -21,6 +21,8 @@ alias rm="rm -i"
 alias ls="ls -F --color=auto"
 alias ll="ls -alF --color=auto"
 alias sl="ls"
+alias tmux="tmux -2"
+alias svnsum='svn status | grep -v "^?"'
 
 # Let GitHub ask for password through terminal instead of GUI dialog
 unset SSH_ASKPASS
