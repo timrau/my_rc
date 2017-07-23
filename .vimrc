@@ -72,6 +72,9 @@ set ignorecase
 set smartcase
 set t_Co=256
 set hlsearch
+runtime macros/matchit.vim
+set nrformats=hex
+set diffopt+=vertical
 " for omnicppcomplete
 let OmniCpp_NamespaceSearch = 2
 let OmniCpp_MayCompleteScope = 1
