@@ -80,6 +80,7 @@ let OmniCpp_NamespaceSearch = 2
 let OmniCpp_MayCompleteScope = 1
 
 let g:SuperTabDefaultCompletionType = "context"
+let g:python_recommended_style = 0
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
